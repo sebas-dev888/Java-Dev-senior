@@ -1,0 +1,42 @@
+@startuml
+
+class User{
+-String username
+-String idUser
+-String password
+-String fullName
+- Action[] history
+- int actionCount
+
+
++ boolean verifyPassword(String pass)
++ boolean changePassword(String current, String newPass)  
++ void addAction(String description)
++ void showHistory()
+}
+class Action {
+  - String description
+  - long timestamp
+
+  + String toString()
+}
+enum role {
+    ADMIN 
+    STANDAR
+}
+class UserSystem {
+  - User[] users
+  - int userCount
+
+  + boolean createUser(String id, String name, String username, String password, Role role)
+  + User findById(String id)
+  + User findByUsername(String username)
+  + boolean updateUser(String id, String name, String password)
+  + boolean deleteUser(String id)
+  + User login(String username, String password)
+}
+
+User "1" *-- "0...*" Action : has
+UserSystem "1" o-- "0...*" User : manages
+User --> role : role
+@enduml

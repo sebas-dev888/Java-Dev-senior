@@ -1,0 +1,1 @@
+Juan-Sebastian-Leal-Ponton: 4.8/5.0 ⭐⭐⭐⭐⭐ Excelente estructura modular, validaciones robustas y código bien organizado. Sugerencias: implementar excepciones y JavaDoc.
